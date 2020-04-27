@@ -15,7 +15,7 @@ import java.util.List;
 public class EmeraldSword extends ItemSword {
 
     public static final ToolMaterial EMERALDSWORD = EnumHelper.addToolMaterial("emeraldsword", 1, 1000, 5.0F, 20.0F, 30);
-    private static String name = "emeraldsword";
+    private static final String name = "emeraldsword";
 
     public EmeraldSword() {
         super(EMERALDSWORD);

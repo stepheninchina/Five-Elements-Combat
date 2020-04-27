@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class EmeraldHelmet extends EmeraldArmor {
-    private static String name = "emeraldhelmet";
+    private static final String name = "emeraldhelmet";
 
     public EmeraldHelmet() {
         super(EntityEquipmentSlot.HEAD);

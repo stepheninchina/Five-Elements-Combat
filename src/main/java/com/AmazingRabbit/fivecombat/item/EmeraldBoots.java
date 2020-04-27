@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class EmeraldBoots extends EmeraldArmor {
-    private static String name = "emeraldboots";
+    private static final String name = "emeraldboots";
 
     public EmeraldBoots() {
         super(EntityEquipmentSlot.FEET);

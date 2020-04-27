@@ -12,7 +12,7 @@ import java.util.List;
 
 public class PrismarineHelmet extends PrismarineArmor
 {
-    private static String name = "prismarinehelmet";
+    private static final String name = "prismarinehelmet";
     public PrismarineHelmet()
     {
         super(EntityEquipmentSlot.HEAD);

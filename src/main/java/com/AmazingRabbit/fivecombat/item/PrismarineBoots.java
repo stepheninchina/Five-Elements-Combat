@@ -12,7 +12,7 @@ import java.util.List;
 
 public class PrismarineBoots extends PrismarineArmor
 {
-    private static String name = "prismarineboots";
+    private static final String name = "prismarineboots";
     public PrismarineBoots()
     {
         super(EntityEquipmentSlot.FEET);

@@ -12,7 +12,7 @@ import java.util.List;
 
 public class PrismarineChestplate extends PrismarineArmor
 {
-    private static String name = "prismarinechestplate";
+    private static final String name = "prismarinechestplate";
     public PrismarineChestplate()
     {
         super(EntityEquipmentSlot.CHEST);

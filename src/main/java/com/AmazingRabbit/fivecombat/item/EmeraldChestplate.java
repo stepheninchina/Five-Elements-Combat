@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class EmeraldChestplate extends EmeraldArmor {
-    private static String name = "emeraldchestplate";
+    private static final String name = "emeraldchestplate";
 
     public EmeraldChestplate() {
         super(EntityEquipmentSlot.CHEST);

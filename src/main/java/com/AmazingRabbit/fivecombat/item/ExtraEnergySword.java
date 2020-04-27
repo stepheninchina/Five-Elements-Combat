@@ -21,7 +21,7 @@ import java.util.List;
 public class ExtraEnergySword extends ItemSword {
 
     public static final ToolMaterial EXTRAENERGYSWORD = EnumHelper.addToolMaterial("extraenergysword", 1, 99999, 5.0F, 40.0F, 1000);
-    private static String name = "extraenergysword";
+    private static final String name = "extraenergysword";
     int i = 0;
 
     public ExtraEnergySword() {

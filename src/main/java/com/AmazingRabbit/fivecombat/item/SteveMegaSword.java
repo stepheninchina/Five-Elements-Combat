@@ -22,7 +22,7 @@ import java.util.List;
 public class SteveMegaSword extends ItemSword {
 
     public static final ToolMaterial STEVEMEGASWORD = EnumHelper.addToolMaterial("stevemegasword", 1, 5000, 5.0F, 60.0F, 100);
-    private static String name = "stevemegasword";
+    private static final String name = "stevemegasword";
 
     public SteveMegaSword() {
         super(STEVEMEGASWORD);
@@ -60,26 +60,30 @@ public class SteveMegaSword extends ItemSword {
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         ItemStack itemstack = playerIn.getHeldItem(handIn);
 
-        EntityPlayer player = playerIn;
-        float hp = player.getHealth();
+        /**
+         *2020/4/27 edit baka4n
+         * <p>EntityPlayer player = playerIn; 原因 playerIn本身就是EntityPlayer多次一举</p>
+         */
+
+        float hp = playerIn.getHealth();
 
         if (hp <= 4) {
-            int i = player.experienceLevel;
+            int i = playerIn.experienceLevel;
             if (i >= 30) {
-                player.addExperienceLevel(-5);
-                player.setHealth(12);
-                worldIn.playSound((EntityPlayer) null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_ELDER_GUARDIAN_CURSE, SoundCategory.PLAYERS, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-                player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 100, 10));
+                playerIn.addExperienceLevel(-5);
+                playerIn.setHealth(12);
+                worldIn.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_ELDER_GUARDIAN_CURSE, SoundCategory.PLAYERS, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+                playerIn.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 100, 10));
             }
         } else {
-            int i = player.experienceLevel;
+            int i = playerIn.experienceLevel;
             if (i >= 30) {
-                player.addExperienceLevel(-5);
-                player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 200, 10));
+                playerIn.addExperienceLevel(-5);
+                playerIn.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 200, 10));
             }
         }
 
-        return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
+        return new ActionResult<>(EnumActionResult.SUCCESS, itemstack);
 
     }
 

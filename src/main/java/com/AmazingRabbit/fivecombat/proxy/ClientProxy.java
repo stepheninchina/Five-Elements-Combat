@@ -11,12 +11,10 @@ public class ClientProxy extends CommonProxy {
         super.preInit(event);
         new ModelRegister();
     }
-
     @Override
     public void init(FMLInitializationEvent event){
         super.init(event);
     }
-
     @Override
     public void postInit(FMLPostInitializationEvent event){
         super.postInit(event);
